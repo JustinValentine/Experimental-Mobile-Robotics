@@ -3,7 +3,8 @@
   <group ns="$(arg veh)">  
 
     <node pkg="motion_control" type="kinematics_node.py" name="kinematics_node" output="screen"/>
-    <node pkg="motion_control" type="my_subscriber_node.py" name="my_subscriber_node_1"  output="screen"></node>
+    <node pkg="motion_control" type="velocity_to_pose_node.py" name="velocity_to_pose_node"  output="screen"></node>
+    <node pkg="basic_shape_traversal" type="basic_shape_traversal.py" name="basic_shape_traversal"  output="screen"></node>
 
   </group>
 
