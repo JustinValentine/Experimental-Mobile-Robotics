@@ -41,6 +41,7 @@ class VelocityToPoseNode(DTROS):
         self.sub_velocity = rospy.Subscriber(
             "~velocity", Twist2DStamped, self.velocity_callback, queue_size=1
         )
+        
         # ---
         self.log("Initialized.")
 

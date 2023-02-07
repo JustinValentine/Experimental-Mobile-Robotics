@@ -6,7 +6,7 @@ import yaml
 import time
 import os.path
 
-from duckietown_msgs.msg import WheelsCmdStamped, Twist2DStamped
+from duckietown_msgs.msg import WheelEncoderStamped, WheelsCmdStamped, Twist2DStamped
 from std_srvs.srv import EmptyResponse, Empty
 
 from duckietown.dtros import DTROS, NodeType, TopicType, DTParam, ParamType
@@ -42,11 +42,10 @@ class KinematicsNode(DTROS):
         # Read parameters from a robot-specific yaml file if such exists
         self.read_params_from_calibration_file()
 
-
+        # Get static parameters
         self._radius = DTParam("~radius", param_type=ParamType.FLOAT, min_value=0.01, max_value=0.1)
 
-
-        # Setup publishers
+        # -- Setup publishers -- 
         self.pub_wheels_cmd = rospy.Publisher(
             "~wheels_cmd", WheelsCmdStamped, queue_size=1, dt_topic_type=TopicType.CONTROL
         )
@@ -54,8 +53,18 @@ class KinematicsNode(DTROS):
             "~velocity", Twist2DStamped, queue_size=1, dt_topic_type=TopicType.CONTROL
         )
 
-        # Setup subscribers
-        self.sub_car_cmd = rospy.Subscriber("~car_cmd", Twist2DStamped, self.car_cmd_callback)
+        # -- Setup subscribers -- 
+        self.sub_car_cmd = rospy.Subscriber(
+            "~car_cmd", Twist2DStamped, self.car_cmd_callback
+        )
+        self.sub_encoder_ticks_left = rospy.Subscriber(
+            "~left_wheel_encoder_node/tick", WheelEncoderStamped, 
+            lambda x: self.cb_encoder_data('left', x)
+        )
+        self.sub_encoder_ticks_right = rospy.Subscriber(
+            "~left_wheel_encoder_node/tick", WheelEncoderStamped, 
+            lambda x: self.cb_encoder_data('right', x)
+        )
         
         # ---
         self.log("kachow!")
