@@ -1,0 +1,12 @@
+<package format="2">
+  <name>duckie_drive</name>
+  <version>1.0.0</version>
+  <description>
+    Implements basic odometry and kinematics to control duckiebot
+  </description>
+  <maintainer email="sergeykhlynovskiy@gmail.com">sergey khlynovskiy</maintainer>
+  <license>GPL3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
