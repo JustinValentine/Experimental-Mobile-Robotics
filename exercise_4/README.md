@@ -1,17 +1,13 @@
-# 🤖 CMPUT 412: Exercise 3 - Computer Vision for Robotics 🤖
+# 🤖 CMPUT 412: Exercise 4 - Tailing Behaviour 🤖
 
-Implementation of detecting and using apriltags for localization. Visualization in rviz and lane following.
+Implementation of a simple Tailing Behaviour.
 
 ## Run on your Duckiebot
-1. Run the LED demo to get the led_pattern service started:
-  * ```shell 
-    dts duckiebot demo --demo_name led_emitter_node --duckiebot_name $BOT --package_name led_emitter --image duckietown/dt-core:daffy-arm64v8
-    ```   
-2. Build it:
+1. Build it:
   * ```shell 
     dts devel build -f -H MY_ROBOT.local
     ```   
-3. Run it:
+2. Run it:
   * ```shell 
     dts devel run -H MY_ROBOT.local
     ```   
