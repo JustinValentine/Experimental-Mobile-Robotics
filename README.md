@@ -24,4 +24,4 @@ To run this project, the following dependencies are required:
 
 - ROS Noetic
 - Duckietown Shell (for Duckiebot platform setup)
-- ROS packages: duckietown, duckietown_msgs, duckietown_visualization, tensorflow, numpy, OpenCV
+- ROS packages: duckietown, duckietown_msgs, duckietown_visualization, pytorch, numpy, OpenCV
