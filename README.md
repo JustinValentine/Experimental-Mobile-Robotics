@@ -1,6 +1,6 @@
 # 🤖 Experimental Mobile Robotics 🦆
 ### Coursework for [CMPUT 412](https://apps.ualberta.ca/catalogue/course/cmput/412)
-This project focuses on the exploration and implementation of various mobile robotics concepts using the Duckiebot platform and Robot Operating System (ROS). The Duckiebot is a cost-effective, compact mobile robot designed for educational and research applications. ROS is a flexible and widely-used framework for developing robotic systems in both academia and industry.
+This project focuses on the exploration and implementation of various mobile robotics concepts using the Duckiebot platform and Robot Operating System (ROS). The Duckiebot is a cost-effective, compact mobile robot designed for educational and research applications. ROS is a flexible and widely-used framework for developing robotic systems in both academia and industry. Docker has been extensively used throughout the project to streamline deployment and ensure consistent environments.
 
 For more information, please visit my [course webpage](https://sites.google.com/view/justinvalentine/home).
 
